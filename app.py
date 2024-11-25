@@ -60,34 +60,42 @@ st.title('Cricket Score Prediction')
 col1, col2 = st.columns(2)
 
 with col1:
-    batting_team = st.selectbox('Select batting team', sorted(teams))
+    batting_team = st.selectbox('Select batting team', ['Select Team'] + sorted(teams))
 with col2:
-    bowling_team = st.selectbox('Select bowling team', sorted(teams))
+    bowling_team = st.selectbox('Select bowling team', ['Select Team'] + sorted(teams))
 
-city = st.selectbox('Select city', sorted(cities))
+city = st.selectbox('Select city', ['Select City'] + sorted(cities))
 
 col3, col4, col5 = st.columns(3)
 
 with col3:
-    current_score = st.number_input('Current Score')
+    current_score = st.number_input('Current Score', min_value=0)
 
 with col4:
-    overs = st.number_input('Overs done')
+    overs = st.number_input('Overs done', min_value=0.0, max_value=20.0, step=0.1)
 
 with col5:
-    wickets = st.number_input('Wickets out')
+    wickets = st.number_input('Wickets out', min_value=0, max_value=10, step=1)
 
-last_five = st.number_input('Runs scored in last 5 overs')
+last_five = st.number_input('Runs scored in last 5 overs', min_value=0)
 
 if st.button('Predict Score'):
-    balls_left = 120 - (overs * 6)
-    wickets_left = 10 - wickets
-    crr = current_score/overs
+    if batting_team == 'Select Team' or bowling_team == 'Select Team' or city == 'Select City':
+        st.error("Please select valid teams and city.")
+    else:
+        balls_left = 120 - (overs * 6)
+        wickets_left = 10 - wickets
+        crr = current_score / overs if overs > 0 else 0
 
-    input_df = pd.DataFrame(
-        {'batting_team' : [batting_team], 'bowling_team' : [bowling_team], 'city' : city, 'current_score' : [current_score], 'balls_left' : [balls_left], 'wickets_left' : [wickets_left], 'crr' : [crr], 'last_five' : [last_five]})
-    
-    # st.table(input_df)
+        input_df = pd.DataFrame(
+            {'batting_team': [batting_team], 
+             'bowling_team': [bowling_team], 
+             'city': [city], 
+             'current_score': [current_score], 
+             'balls_left': [balls_left], 
+             'wickets_left': [wickets_left], 
+             'crr': [crr], 
+             'last_five': [last_five]})
 
-    result = pipe.predict(input_df)
-    st.header("Predicted Score - " + str(int(result[0])))
+        result = pipe.predict(input_df)
+        st.header("Predicted Score - " + str(int(result[0])))
