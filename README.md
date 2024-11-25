@@ -2,7 +2,6 @@
 
 Predict the final score of a T20 cricket match using machine learning! This project leverages the power of the XGBoost algorithm to estimate scores based on match conditions and recent performance metrics.
 
----
 
 ## 🌟 Features  
 - Predict the final score based on:  
@@ -15,12 +14,10 @@ Predict the final score of a T20 cricket match using machine learning! This proj
 - Interactive interface for input and results display.  
 - Deployed on **Streamlit Cloud** for easy access.
 
----
 
 ## 📂 Dataset  
-The dataset used for this project is sourced from **[Kaggle's Cricsheet - A Retrosheet for Cricket](https://www.kaggle.com/datasets)**. It contains detailed match data, allowing comprehensive feature engineering and training.
+The dataset used for this project is sourced from **[Kaggle's Cricsheet - A Retrosheet for Cricket](https://www.kaggle.com/datasets/veeralakrishna/cricsheet-a-retrosheet-for-cricket)**. It contains detailed match data, allowing comprehensive feature engineering and training.
 
----
 
 ## 🛠️ Tech Stack  
 - **Machine Learning Algorithm:** XGBoost  
@@ -33,7 +30,6 @@ The dataset used for this project is sourced from **[Kaggle's Cricsheet - A Retr
   - XGBoost  
   - Pipeline  
 
----
 
 ## 🏗️ Workflow  
 1. **Data Extraction:** Gathered match data from Kaggle.  
@@ -41,14 +37,12 @@ The dataset used for this project is sourced from **[Kaggle's Cricsheet - A Retr
 3. **Model Training:** Trained the machine learning model using XGBoost.  
 4. **Deployment:** Deployed the application on Streamlit Cloud for user interaction.  
 
----
 
 ## 🚀 How to Use  
 1. Visit the deployed application: [T20 Cricket Score Predictor](https://t20scorepredictor-yjain0418.streamlit.app/).  
 2. Enter the match details like teams, city, current score, overs, wickets, and last five overs' score.  
 3. Click "Predict" to see the estimated final score.  
 
----
 
 ## 📦 Installation (Local Setup)  
 To run the project locally, follow these steps:  
