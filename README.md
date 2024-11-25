@@ -64,7 +64,7 @@ To run the project locally, follow these steps:
 Contributions are welcome! Feel free to open issues or submit pull requests to improve the project.
 
 ## 📬 Contact
-If you have any questions or feedback, reach out to me on [LinkedIn](www.linkedin.com/in/yjain0418).
+If you have any questions or feedback, reach out to me on [LinkedIn](https://www.linkedin.com/in/yjain0418).
 
 ## 🎯 Future Enhancements
 - Include additional features like weather conditions and pitch type.
